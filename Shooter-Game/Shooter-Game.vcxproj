@@ -171,7 +171,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\source-files\main.cpp" />
+    <ClCompile Include="src\Entrypoint\entrypoint.cpp" />
+    <ClCompile Include="src\source-files\engine_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\header-files\engine_main.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
