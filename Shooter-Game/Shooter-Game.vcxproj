@@ -173,9 +173,11 @@
   <ItemGroup>
     <ClCompile Include="src\Entrypoint\entrypoint.cpp" />
     <ClCompile Include="src\source-files\engine_main.cpp" />
+    <ClCompile Include="src\source-files\engine_utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\header-files\engine_main.hpp" />
+    <ClInclude Include="src\header-files\engine_utility.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
