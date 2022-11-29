@@ -179,6 +179,9 @@
     <ClInclude Include="src\header-files\engine_main.hpp" />
     <ClInclude Include="src\header-files\engine_utility.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TODO.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,29 +1,80 @@
 #include "../header-files/engine_utility.hpp"
-#include "../header-files/engine_main.hpp"
-#include <conio.h>
-#include <windows.h>
 
-void engine_utility::textColor(int& returnValue, color color)
+void engine_utility::textColor(int& returnValue, COLOR_F color)
 {
-	//
-}
-
-void engine_utility::textBackgroundColor(int& returnValue, color color)
-{
-	//
-}
-
-void engine_utility::showCursor(int& returnValue, int show)
-{
+	WORD attr = (WORD)color;
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (SetConsoleTextAttribute(handle, attr) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
+}
+
+void engine_utility::textBackgroundColor(int& returnValue, COLOR_B color)
+{
+	WORD attr = (WORD)color;
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (SetConsoleTextAttribute(handle, attr) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
+}
+
+void engine_utility::showCursor(int& returnValue, BOOL show)
+{
+	CONSOLE_CURSOR_INFO* cci = nullptr;
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (GetConsoleCursorInfo(handle, cci) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	cci->bVisible = (BOOL)show;
+	if (SetConsoleCursorInfo(handle, cci) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
 }
 
 void engine_utility::cursorFillLevel(int& returnValue, int fillLevel)
 {
-	//
+	CONSOLE_CURSOR_INFO* cci = nullptr;
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (GetConsoleCursorInfo(handle, cci) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	cci->dwSize = (DWORD)fillLevel;
+	if (SetConsoleCursorInfo(handle, cci) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
 }
 
-void engine_utility::getKey(int& key)
+void engine_utility::gotoxy(int& returnValue, short x, short y)
+{
+	COORD xy;
+	xy.X = x;
+	xy.Y = y;
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (SetConsoleCursorPosition(handle, xy) == 0)
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
+}
+
+void engine_utility::getKey(int& returnValue, int& key)
 {
 	int x = getch();
 	if (x >= 224)
@@ -31,4 +82,5 @@ void engine_utility::getKey(int& key)
 		x += getch();
 	}
 	key = x;
+	returnValue = 0;
 }
