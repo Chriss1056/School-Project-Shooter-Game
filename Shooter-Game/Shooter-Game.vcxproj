@@ -174,10 +174,12 @@
     <ClCompile Include="src\Entrypoint\entrypoint.cpp" />
     <ClCompile Include="src\source-files\engine_main.cpp" />
     <ClCompile Include="src\source-files\engine_utility.cpp" />
+    <ClCompile Include="src\source-files\game_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\header-files\engine_main.hpp" />
     <ClInclude Include="src\header-files\engine_utility.hpp" />
+    <ClInclude Include="src\header-files\game_main.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\TODO.md" />

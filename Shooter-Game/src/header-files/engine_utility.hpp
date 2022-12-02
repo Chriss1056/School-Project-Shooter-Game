@@ -7,7 +7,9 @@
 #include <conio.h>
 #include <windows.h>
 
-
+/// <summary>
+/// All Background Colors in the following format: R/X G/X B/X D/L
+/// </summary>
 enum class COLOR_B
 {
 	RXXD = BACKGROUND_RED,
@@ -26,6 +28,9 @@ enum class COLOR_B
 	RGBL = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY
 };
 
+/// <summary>
+/// All Foreground Colors in the following format: R/X G/X B/X D/L
+/// </summary>
 enum class COLOR_F
 {
 	RXXD = FOREGROUND_RED,
@@ -44,6 +49,9 @@ enum class COLOR_F
 	RGBL = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY
 };
 
+/// <summary>
+/// This is a Utility class for all Utility functions.
+/// </summary>
 class engine_utility
 {
 protected:

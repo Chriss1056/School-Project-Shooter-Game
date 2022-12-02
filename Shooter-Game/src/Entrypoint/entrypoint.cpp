@@ -3,17 +3,18 @@
 
 int main()
 {
-	int keep_alive = 0;
+	int returnValue = -1;
 
-	engine_main::init();
+	engine_main::init(returnValue);
+	if (returnValue)
+		return 1;
 
 	do
 	{
-		engine_main::tick();
-	} while (keep_alive);
+		engine_main::tick(returnValue);
+	} while (!returnValue);
 
-	engine_main::exit();
+	engine_main::exit(returnValue);
 
-	std::cin.get();
-	return 0;
+	return returnValue;
 }
