@@ -76,10 +76,10 @@ void engine_utility::gotoxy(int& returnValue, short x, short y)
 
 void engine_utility::getKey(int& returnValue, int& key)
 {
-	int x = getch();
+	int x = _getch();
 	if (x >= 224)
 	{
-		x += getch();
+		x += _getch();
 	}
 	key = x;
 	returnValue = 0;
