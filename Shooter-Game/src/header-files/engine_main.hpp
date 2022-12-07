@@ -3,13 +3,12 @@
 #ifndef ENGINE_MAIN_HEADER_CLASS
 #define ENGINE_MAIN_HEADER_CLASS
 
-#include "engine_utility.hpp"
 #include "game_main.hpp"
 
 /// <summary>
 /// This is the main class for the Game.
 /// </summary>
-class engine_main : protected engine_utility, protected game_main
+class engine_main : protected game_main
 {
 public:
 	/// <summary>

@@ -26,15 +26,15 @@ void engine_utility::textBackgroundColor(int& returnValue, COLOR_B color)
 
 void engine_utility::showCursor(int& returnValue, BOOL show)
 {
-	CONSOLE_CURSOR_INFO* cci = nullptr;
+	CONSOLE_CURSOR_INFO cci;
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-	if (GetConsoleCursorInfo(handle, cci) == 0)
+	if (GetConsoleCursorInfo(handle, &cci) == 0)
 	{
 		returnValue = 1;
 		return;
 	}
-	cci->bVisible = (BOOL)show;
-	if (SetConsoleCursorInfo(handle, cci) == 0)
+	cci.bVisible = (BOOL)show;
+	if (SetConsoleCursorInfo(handle, &cci) == 0)
 	{
 		returnValue = 1;
 		return;
@@ -44,15 +44,15 @@ void engine_utility::showCursor(int& returnValue, BOOL show)
 
 void engine_utility::cursorFillLevel(int& returnValue, int fillLevel)
 {
-	CONSOLE_CURSOR_INFO* cci = nullptr;
+	CONSOLE_CURSOR_INFO cci;
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-	if (GetConsoleCursorInfo(handle, cci) == 0)
+	if (GetConsoleCursorInfo(handle, &cci) == 0)
 	{
 		returnValue = 1;
 		return;
 	}
-	cci->dwSize = (DWORD)fillLevel;
-	if (SetConsoleCursorInfo(handle, cci) == 0)
+	cci.dwSize = (DWORD)fillLevel;
+	if (SetConsoleCursorInfo(handle, &cci) == 0)
 	{
 		returnValue = 1;
 		return;

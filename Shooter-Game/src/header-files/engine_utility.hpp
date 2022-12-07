@@ -3,7 +3,7 @@
 #ifndef ENGINE_UTILITY_HEADER_CLASS
 #define ENGINE_UTILITY_HEADER_CLASS
 
-#include "../header-files/engine_main.hpp"
+#include "engine_main.hpp"
 #include <conio.h>
 #include <windows.h>
 
@@ -50,11 +50,10 @@ enum class COLOR_F
 };
 
 /// <summary>
-/// This is a Utility class for all Utility functions.
+/// This is a Utility Namespace for all Utility functions.
 /// </summary>
-class engine_utility
+namespace engine_utility
 {
-protected:
 	/// <summary>
 	/// Colors the Text.
 	/// </summary>

@@ -177,7 +177,6 @@
     <ClCompile Include="src\source-files\game_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Entrypoint\entrypoint.hpp" />
     <ClInclude Include="src\header-files\engine_main.hpp" />
     <ClInclude Include="src\header-files\engine_utility.hpp" />
     <ClInclude Include="src\header-files\game_main.hpp" />
