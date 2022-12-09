@@ -10,7 +10,7 @@
 /// </summary>
 class game_main
 {
-protected:
+public:
 	/// <summary>
 	/// This Stores the Position of the ship.
 	/// </summary>
@@ -47,13 +47,7 @@ protected:
 		/// </summary>
 		int killedEnemies;
 	};
-	/// <summary>
-	/// With this Function, you populate and set up the Main Game Struct.
-	/// </summary>
-	/// <param name="returnValue">is the return Code. Anything else than 0 is an error.</param>
-	/// <param name="gameWorld">is the Main Game Struct.</param>
-	/// <returns>0 ... Success</returns>
-	static void generateWorld(int& returnValue, gameWorld& gameWorld);
+protected:
 	/// <summary>
 	/// With this Function, you progress the Game one step further.
 	/// </summary>
@@ -61,6 +55,13 @@ protected:
 	/// <param name="gameWorld">is the Main Game Struct.</param>
 	/// <returns>0 ... Success</returns>
 	static void tickGame(int& returnValue, gameWorld& gameWorld);
+	/// <summary>
+	/// With this Function, you populate and set up the Main Game Struct.
+	/// </summary>
+	/// <param name="returnValue">is the return Code. Anything else than 0 is an error.</param>
+	/// <param name="gameWorld">is the Main Game Struct.</param>
+	/// <returns>0 ... Success</returns>
+	static void generateWorld(int& returnValue, gameWorld& gameWorld);
 };
 
 #endif //GAME_MAIN_HEADER_CLASS

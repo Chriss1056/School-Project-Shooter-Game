@@ -1,5 +1,20 @@
 #include "../header-files/game_main.hpp"
 
+int refreshGameWorld(game_main::gameWorld& gameWorld)
+{
+	return 0;
+}
+
+void game_main::tickGame(int& returnValue, gameWorld& gameWorld)
+{
+	if (refreshGameWorld(gameWorld))
+	{
+		returnValue = 1;
+		return;
+	}
+	returnValue = 0;
+}
+
 void game_main::generateWorld(int& returnValue, gameWorld& gameWorld)
 {
 	gameWorld.killedEnemies = 0;
@@ -18,10 +33,5 @@ void game_main::generateWorld(int& returnValue, gameWorld& gameWorld)
 			gameWorld.world[y][x] = 0;
 		}
 	}
-	returnValue = 0;
-}
-
-void game_main::tickGame(int& returnValue, gameWorld& gameWorld)
-{
 	returnValue = 0;
 }
