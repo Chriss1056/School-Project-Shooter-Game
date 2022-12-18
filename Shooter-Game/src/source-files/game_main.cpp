@@ -17,9 +17,19 @@ int refreshGameWorld(game_main::gameWorld& gameWorld)
 	return 0;
 }
 
+int generateNewWorldLine(game_main::gameWorld& gameWorld)
+{
+	return 0;
+}
+
 void game_main::tickGame(int& returnValue, gameWorld& gameWorld)
 {
 	if (refreshGameWorld(gameWorld))
+	{
+		returnValue = 1;
+		return;
+	}
+	if (generateNewWorldLine(gameWorld))
 	{
 		returnValue = 1;
 		return;
