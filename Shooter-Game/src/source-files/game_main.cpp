@@ -4,21 +4,27 @@ int refreshGameWorld(game_main::gameWorld& gameWorld)
 {
 	std::vector<int> tmp;
 	tmp.resize(20);
-	/* Copies Line 61 to line 0
-	for (int y = 0; y < gameWorld.world[60].size(); y++)
+	for (int x = 0; x < (gameWorld.world.size() - 1); x++)
 	{
-		tmp[y] = gameWorld.world[60][y];
+		for (int y = 0; y < gameWorld.world[x].size(); y++)
+		{
+			tmp[y] = gameWorld.world[(x + 1)][y];
+		}
+		for (int y = 0; y < gameWorld.world[x].size(); y++)
+		{
+			gameWorld.world[x][y] = tmp[y];
+		}
 	}
-	for (int y = 0; y < gameWorld.world[0].size(); y++)
-	{
-		gameWorld.world[0][y] = tmp[y];
-	}
-	*/ 
 	return 0;
 }
 
 int generateNewWorldLine(game_main::gameWorld& gameWorld)
 {
+	srand(time(0));
+	for (int i = 0; i < gameWorld.world[60].size(); i++)
+	{
+		gameWorld.world[60][i] = rand() % 2;
+	}
 	return 0;
 }
 

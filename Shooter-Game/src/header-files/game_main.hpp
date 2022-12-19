@@ -4,6 +4,8 @@
 #define GAME_MAIN_HEADER_CLASS
 
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 /// <summary>
 /// This is the Main Game Class that has more less the Game in it.
@@ -11,6 +13,13 @@
 class game_main
 {
 public:
+	enum class presets
+	{
+		WASSER,
+		SHIFF,
+		LAND,
+		TREFFER
+	};
 	/// <summary>
 	/// This Stores the Position of the ship.
 	/// </summary>
